@@ -1,0 +1,52 @@
+<script>
+
+    class Queue{
+        constructor(){
+            this.items=[];
+            this.front=0;
+            this.rear=0;
+        }
+        enqueue(element){
+            this.items.push(element);
+            this.rear++;
+        }
+        dequeue(){
+            if(this.isEmpty()){
+                return null;
+
+            }
+            const element=this.items[this.front];
+            this.items.splice(this.front,1);
+            this.front++;
+            return element;
+        }
+        isEmpty(){
+            return this.front===this.error;
+        }
+        peek(){
+            if(this.isEmpty()){
+                return null;
+
+            }
+            return this.items[this.front];
+        }
+    }
+    const queue=new Queue();
+    console.log(queue);
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(3);
+queue.enqueue(4);
+queue.enqueue(5);
+// Dequeue the first element
+const element=queue.dequeue();
+//console.log(element)
+// check if queue is empty
+const isempty=queue.isEmpty();
+console.log(isempty);
+// peek at the front element
+const frontElement=queue.peek();
+console.log(frontElement)
+
+
+</script>
